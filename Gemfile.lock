@@ -2,11 +2,13 @@ PATH
   remote: .
   specs:
     eddy (0.0.1)
+      ncursesw
 
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
+    ncursesw (1.4.3)
     rake (10.1.1)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
