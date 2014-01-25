@@ -6,8 +6,8 @@ require 'eddy/version'
 Gem::Specification.new do |spec|
   spec.name          = 'eddy'
   spec.version       = Eddy::VERSION
-  spec.authors       = ['James Bobowski', "Tim Herd"]
-  spec.email         = ['james.bobowski@gmail.com', "rz@eqdw.net"]
+  spec.authors       = ['James Bobowski', 'Jimmy Qian', 'Tim Herd']
+  spec.email         = ['james.bobowski@gmail.com', 'jimmyqian@gmail.com', 'rz@eqdw.net']
   spec.summary       = %q{Ruby Gem for building text-based user interfaces.}
   spec.description   = %q{Ruby Gem for building text-based user interfaces.}
   spec.homepage      = ''
