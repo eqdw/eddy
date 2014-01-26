@@ -1,5 +1,10 @@
 module Eddy
-  class Program
+  class Program    
+    # Overridable Ncurses reference    
+    def self.N
+      ::Ncurses
+    end
+    
     def initialize
       @main_menu = nil
     end
@@ -18,31 +23,36 @@ module Eddy
     end
     
     def init_ncurses      
-      ::Ncurses.initscr
+      n.initscr
       
       # Provide unbuffered input
-      ::Ncurses.cbreak           
+      n.cbreak           
       
       # Turn off input echoing
-      ::Ncurses.noecho           
+      n.noecho           
       
       # Turn off newline translation
-      ::Ncurses.nonl             
+      n.nonl             
       
       # Turn off flush-on-interrupt
-      ::Ncurses.stdscr.intrflush(false) 
+      n.stdscr.intrflush(false) 
 
       # Turn on keypad mode
-      ::Ncurses.stdscr.keypad(true)           
+      n.stdscr.keypad(true)           
     end
     private :init_ncurses
     
     def cleanup_ncurses
-      ::Ncurses.echo
-      ::Ncurses.nocbreak
-      ::Ncurses.nl
-      ::Ncurses.endwin      
+      n.echo
+      n.nocbreak
+      n.nl
+      n.endwin      
     end
     private :cleanup_ncurses
+    
+    def n
+      Program.N
+    end
+    private :n
   end
 end
