@@ -22,7 +22,7 @@ module Eddy
       end
     end
 
-    def init_ncurses
+    def init_ncurses      
       n.initscr
 
       # Provide unbuffered input
@@ -38,10 +38,21 @@ module Eddy
       n.stdscr.intrflush(false)
 
       # Turn on keypad mode
-      n.stdscr.keypad(true)
+      n.stdscr.keypad(true)           
+
+      # Turn on colors
+      n.start_color()
+
+      set_color
     end
     private :init_ncurses
 
+    def set_color
+      n.init_pair(1, Ncurses::COLOR_WHITE, Ncurses::COLOR_BLUE)
+      n.stdscr.bkgd(n.COLOR_PAIR(1))
+    end
+    private :set_color
+    
     def cleanup_ncurses
       n.echo
       n.nocbreak
