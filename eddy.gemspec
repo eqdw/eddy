@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry'
   
   spec.add_dependency 'ncursesw'
+  spec.add_dependency 'popen4'
 end
